@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Troc'cours</h1>
+  
+
+  <ion-list>
+    <form [formGroup]="myForm">
+      <ion-item>
+        <ion-label position="floating"  >Login</ion-label>
+        <ion-input formControlName="log" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"  >Password</ion-label>
+        <ion-input type="password" formControlName="mdp" required></ion-input>
+      </ion-item>
+    </form>
+  </ion-list>
+
+  
+
+  <div id = "btn" style="text-align: center">
+     <ion-button color="secondary" (click)="loginBtn()">Se connecter</ion-button>
+     <ion-button color="danger"  routerLink='/register/' routerDirection="root" >Créer un compte </ion-button>
+
+    <ion-button id="mdpoublie" color="Tertiary"  routerLink='/passeoublier/' routerDirection="root" >Mot de passe oublié</ion-button>
+    </div>
+    
+</ion-content>

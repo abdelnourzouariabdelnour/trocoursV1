@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <h1   style="text-align: center">  Troc'cours</h1>
+ 
+
+  <h2   style="font-family: cursive" style="color:cadetblue">  Creation de compte :</h2>
+  <br>
+
+
+  <ion-list>
+    <form [formGroup]="myForm">
+      <ion-item>
+        <ion-label position="floating" [ngClass]="myForm.controls.name.status != 'VALID' && myForm.controls.name.touched ? 'error' : ''" >Nom : </ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating" [ngClass]="myForm.controls.prenom.status != 'VALID' && myForm.controls.prenom.touched ? 'error' : ''" >Prenom :</ion-label>
+        <ion-input formControlName="prenom"  ></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="floating" [ngClass]="myForm.controls.pseudo.status != 'VALID' && myForm.controls.pseudo.touched ? 'error' : ''">Pseudo :</ion-label>
+        <ion-input  formControlName="pseudo" ></ion-input>
+      </ion-item>
+      
+
+      <ion-item>
+          <ion-label position="floating"  [ngClass]="myForm.controls.Select.status != 'VALID' && myForm.controls.Select.touched ? 'error' : ''" >Choisis ton université</ion-label>
+          <ion-select  formControlName="Select">
+            <ion-select-option value="" selected>Choisis ton université</ion-select-option>
+            <ion-select-option value="1">Lille 1</ion-select-option>
+            <ion-select-option value="2" >Lille 2</ion-select-option>
+            <ion-select-option value="3">Lille 3</ion-select-option>
+            <ion-select-option value="4"> Paris 1</ion-select-option>
+            <ion-select-option value="5"> Paris 2 </ion-select-option>
+            <ion-select-option value="6">Paris  3</ion-select-option>
+          </ion-select>
+      </ion-item>
+
+        
+      <ion-item>
+            <ion-label position="floating"  [ngClass]="myForm.controls.Select2.status != 'VALID' && myForm.controls.Select2.touched ? 'error' : ''" >Choisis ton Niveau d'etude </ion-label>
+            <ion-select formControlName="Select2">
+              <ion-select-option value="" selected>Choisis ton Année d'etude</ion-select-option>
+              <ion-select-option value="1">Licence 1</ion-select-option>
+              <ion-select-option value="2" >Licence 2</ion-select-option>
+              <ion-select-option value="3">Licence 3</ion-select-option>
+              <ion-select-option value="4"> Master 1</ion-select-option>
+              <ion-select-option value="5"> Master 2 </ion-select-option>        
+              <ion-select-option value="6"> DUT 1</ion-select-option>  
+              <ion-select-option value="7"> DUT 2</ion-select-option>  
+            </ion-select>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="floating"  [ngClass]="this.myForm.Email != this.myForm.Email2 ? 'error' : ''" >Mail :</ion-label>
+        <ion-input formControlName="Email" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating" [ngClass]="this.myForm.Email != this.myForm.Email2 ? 'error' : ''"  >Confirmation Mail : </ion-label>
+        <ion-input formControlName="Email2"  ></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="floating" [ngClass]="this.myForm.mdp != this.myForm.mdp2 ? 'error' : ''"  >Mot de passe :</ion-label>
+        <ion-input  type="password" formControlName="mdp"   ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" [ngClass]="this.myForm.mdp != this.myForm.mdp2 ? 'error' : ''" >Confirmation mot de passe : </ion-label>
+        <ion-input   type="password" formControlName="mdp2"   ></ion-input>
+      </ion-item> 
+    </form>
+  </ion-list>
+
+  <ion-button color="danger" (click)="registerBtn()">S'inscrire </ion-button>
+  
+
+</ion-content>

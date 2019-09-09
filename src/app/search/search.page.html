@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1   style="text-align: center">  Troc'cours</h1>
+  <ion-searchbar [(ngModel)]="searchSearch" ngDefaultControl>
+    <ion-button  type="submit" (click)="searchBtn2()">
+      <ion-icon name="search"></ion-icon>
+    </ion-button> 
+  </ion-searchbar>
+  
+  <p> résulat pour {{ search }}      :</p>
+</ion-content>

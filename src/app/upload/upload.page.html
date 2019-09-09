@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>upload</ion-title>
+    <ion-button routerLink="/myacount/" routerDirection="root"  slot="end"> <ion-icon name="contact" ></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h1 style="text-align: center"> Troc'cours </h1>
+ 
+     Ici, Vous pouvez Upload vos cours a fin de bénéficier d'étoiles,
+    qui vous permettrons de télécharger les cours que vous souhaitez Gratuitement !
+
+    <ion-list>
+    <form [formGroup]="myForm">
+    <ion-item>
+        <ion-label position="floating" >Intitulé du cours : </ion-label>
+        <ion-input formControlName="nomDuCours"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" >nom du prof : </ion-label>
+        <ion-input formControlName="nomduprof"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" >Select</ion-label>
+        <ion-select formControlName="select3">
+          <ion-select-option value="" selected>Choisis ton université</ion-select-option>
+          <ion-select-option value="lille1">Lille 1</ion-select-option>
+          <ion-select-option value="lille2" >Lille 2</ion-select-option>
+          <ion-select-option value="lille3">Lille 3</ion-select-option>
+          <ion-select-option value="Paris 1"> Paris 1</ion-select-option>
+          <ion-select-option value="Paris 2"> Paris 2 </ion-select-option>
+          <ion-select-option value="Paris 3">Paris  3</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+          <ion-label position="floating" >Année d'etude du cours: </ion-label>
+          <ion-select formControlName="select4">
+            <ion-select-option value="" selected>Choisis l'année d'etude du cours</ion-select-option>
+            <ion-select-option value="l1">Licence 1</ion-select-option>
+            <ion-select-option value="l2" >Licence 2</ion-select-option>
+            <ion-select-option value="l3">Licence 3</ion-select-option>
+            <ion-select-option value="M1"> Master 1</ion-select-option>
+            <ion-select-option value="M2"> Master 2 </ion-select-option>        
+            <ion-select-option value="D1"> DUT 1</ion-select-option>  
+            <ion-select-option value="D2"> DUT 2</ion-select-option>  
+          </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"  >description du cours : </ion-label>
+      <ion-input type="text" formControlName="description" ></ion-input>
+    </ion-item>
+ 
+    Je déclare pocéder les droits du cours et 
+    ceder les cours en cochant la case suivante
+    pour qu'il puisse être mis a dispotion des autres utilisateurs :
+
+    <ion-item>  
+        <ion-label position="floating"   ></ion-label>
+        <ion-checkbox slot="end" checked="false" formControlName="check"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating"  >  Upload votre cours </ion-label>
+        <ion-input type="file" formControlName="upload"></ion-input>
+    </ion-item>
+  </form>
+  </ion-list>
+
+  <ion-button color="danger" (click)="terminerBtn()">Terminer </ion-button>
+
+</ion-content>
